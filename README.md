@@ -28,12 +28,6 @@ Note: recent Homebrew versions keep macOS quarantine on downloads, so the first-
 xattr -dr com.apple.quarantine /Applications/YappYapp.app
 ```
 
-If you would rather skip the first-open Gatekeeper prompt entirely, use the zero-prompt variant:
-
-```
-```
-
-
 ## Updates
 
 The app updates itself. Signed updates are delivered through Sparkle, so you get new versions verified and in place without hunting down a download.

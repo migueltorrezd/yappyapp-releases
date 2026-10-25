@@ -2,35 +2,31 @@
 
 YappYapp is a local-only dictation app for your Mac. Press Option+Space, talk, and verified text lands where your cursor is, with on-device Whisper and Parakeet transcription so your voice never leaves your Mac.
 
-This repo hosts the public downloads. You are here as a beta friend, so thank you for kicking the tires.
+**Website, setup guide and download: [yappyapp.app](https://yappyapp.app/en/download)**
+
+This repo hosts the public downloads, the update feed and the issue tracker. The source code is at [migueltorrezd/yappyapp](https://github.com/migueltorrezd/yappyapp).
 
 ## Install via DMG
 
-1. Download the latest `YappYapp-x.y.z.dmg` from the [Releases page](https://github.com/migueltorrezd/yappyapp-releases/releases/latest).
+1. Download the latest `YappYapp-x.y.z.dmg` from the [Releases page](https://github.com/migueltorrezd/yappyapp-releases/releases/latest) or from [yappyapp.app](https://yappyapp.app/en/download).
 2. Open the DMG and drag YappYapp into your Applications folder.
-3. First open, because the app is not notarized yet:
-   - **macOS 15 or newer:** double-click YappYapp. macOS will block it. Go to System Settings -> Privacy & Security, scroll to the note about YappYapp, and click **Open Anyway**. Confirm once more when prompted.
-   - **macOS 14:** right-click YappYapp in Applications and choose **Open**, then click **Open** in the dialog.
+3. Double-click YappYapp. It is signed with a Developer ID and notarized, so it opens like any other app.
 
-You only do this once. After that YappYapp launches like any other app.
+Step-by-step setup (microphone, accessibility, picking a model): [yappyapp.app/en/how-to-use](https://yappyapp.app/en/how-to-use).
+
+YappYapp needs an Apple Silicon Mac with macOS 14 or newer.
 
 ## Install via Homebrew
-
-If you use the tap, one command installs everything:
 
 ```
 brew install --cask migueltorrezd/tap/yappyapp
 ```
 
-Note: recent Homebrew versions keep macOS quarantine on downloads, so the first-open steps above apply to Homebrew installs too. If you want to skip the first-open prompt entirely, run this after installing:
-
-```
-xattr -dr com.apple.quarantine /Applications/YappYapp.app
-```
-
 ## Updates
 
 The app updates itself. Signed updates are delivered through Sparkle, so you get new versions verified and in place without hunting down a download.
+
+Updating straight from 0.3.x: macOS asks for Accessibility and Microphone access once more, because 0.4.0 changed how the app is signed. Turn YappYapp back on in System Settings > Privacy & Security > Accessibility and > Microphone.
 
 ## What to test as a beta friend
 
@@ -40,7 +36,3 @@ The app updates itself. Signed updates are delivered through Sparkle, so you get
 - Meet your pet. Dictate a bit and see it level up.
 
 If something breaks, please [open an Issue](https://github.com/migueltorrezd/yappyapp-releases/issues). The app also has built-in diagnostics for mic, models, paste, and permissions, so mention that output in your report and it will save us both time.
-
-## One honest note
-
-The source code is private during this beta. It opens up with the public launch.
